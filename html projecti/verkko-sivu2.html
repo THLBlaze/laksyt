@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CompanyX</title>
+
+    <style>
+
+        /* GENERAL */
+
+        body {
+            margin: 0;
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: lightgray;
+            padding-right: 30px;
+        }
+
+        .logo {
+            background-color: gray;
+            color: white;
+            padding: 20px 35px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav li {
+            cursor: pointer;
+        }
+
+        nav li:hover {
+            color: gray;
+        }
+
+        /* PAGE CONTENT */
+
+        .page {
+            display: none;
+            padding: 20px;
+            min-height: 80vh;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* HOME */
+
+        h1 {
+            text-align: center;
+            font-size: 45px;
+        }
+
+        .hero {
+            background-color: #333;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #aaa;
+            font-size: 30px;
+        }
+
+        .description {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 650px;
+        }
+
+        /* PRODUCTS */
+
+        .products {
+            display: flex;
+            gap: 15px;
+        }
+
+        .card {
+            background-color: lightgray;
+            padding: 15px;
+            flex: 1;
+        }
+
+        .product-img {
+            background-color: #333;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #aaa;
+            font-size: 30px;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            background-color: lightgray;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 30px;
+            text-align: center;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            nav {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            nav ul {
+                gap: 15px;
+                padding: 0;
+            }
+
+            .products {
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="logo">
+            Site Logo
+        </div>
+
+        <ul>
+            <li onclick="showPage('home')">Home</li>
+            <li onclick="showPage('products')">Products</li>
+            <li onclick="showPage('contact')">Contact</li>
+        </ul>
+
+    </nav>
+
+
+    <!-- HOME PAGE -->
+
+    <section id="home" class="page active">
+
+        <h1>CompanyX</h1>
+
+        <div class="hero">
+            IMG
+        </div>
+
+        <p class="description">
+            Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Reiciendis labore atque
+            iure perferendis, ut quidem distinctio
+            suscipit, voluptatibus aperiam repudiandae.
+        </p>
+
+    </section>
+
+
+    <!-- PRODUCTS PAGE -->
+
+    <section id="products" class="page">
+
+        <h1>Our Products</h1>
+
+        <div class="products">
+
+            <div class="card">
+
+                <h3>Product 1</h3>
+
+                <div class="product-img">
+                    IMG
+                </div>
+
+                <p><i>Product 1</i></p>
+
+                <p>
+                    Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit.
+                    Doloremque officia aperiam.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Product 2</h3>
+
+                <div class="product-img">
+                    IMG
+                </div>
+
+                <p><i>Product 2</i></p>
+
+                <p>
+                    Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit.
+                    Doloremque officia aperiam.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Product 3</h3>
+
+                <div class="product-img">
+                    IMG
+                </div>
+
+                <p><i>Product 3</i></p>
+
+                <p>
+                    Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit.
+                    Doloremque officia aperiam.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT PAGE -->
+
+    <section id="contact" class="page">
+
+        <h1>Contact Us</h1>
+
+        <div class="contact-box">
+
+            <h2>Get in touch!</h2>
+
+            <p>Phone: +358 40 123 4567</p>
+
+            <p>Email: companyx@gmail.com</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function showPage(pageName) {
+
+            let pages = document.querySelectorAll(".page");
+
+            pages.forEach(function(page) {
+                page.classList.remove("active");
+            });
+
+            document.getElementById(pageName)
+                .classList.add("active");
+
+        }
+
+    </script>
+
+</body>
+</html>
